@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Particle Modeler (best viewed in Chrome)</title>
+    <link href="css/particleWorld.css" rel="stylesheet" type="text/css" />
+
+    <script src="script/prototype-1.6.0.3.js" language="javascript" type="text/javascript"></script>
+
+    <script src="script/particle.js" language="javascript" type="text/javascript"></script>
+
+    <script src="script/environment.js" language="javascript" type="text/javascript"></script>
+
+</head>
+<body onmouseup="stopCreatingParticles(event)" onResize="initializeWorld()">    
+        <canvas id="particleContainer" onmousedown="startCreatingParticles(event)"
+            ondblclick="createCollidableObject(event)">
+    </canvas>
+    
+    <div id="parameterMenu">
+        <div class="optionsTitle">
+            Options</div>
+        <div class="description">
+            Click and drag to create particles.<br />
+            Double-click in the container to create an obstacle.<br />
+        </div>
+        <div class="optionsSectionDiv">
+            <div class="optionsSectionTitle">
+                Environment</div>
+            <div class="options">
+                <div class="optionName">
+                    Gravity</div>
+                <input type="text" id="gravityOptionText" class="optionTextInput" /></div>
+            <div class="options">
+                <input type="checkbox" id="gravityDirectionOptionCheckbox" />
+                Reverse Gravity</div>
+            <div class="options">
+                <div class="optionName">
+                    Friction</div>
+                <input type="text" id="frictionOptionText" class="optionTextInput" /></div>
+        </div>
+        <div class="optionsSectionDiv">
+            <div class="optionsSectionTitle">
+                Particles</div>
+            <div class="options">
+                <input type="checkbox" id="particleToParticleCollisionOptionCheckbox" />
+                Particle to particle collisions</div>
+            <div class="options">
+                <div class="optionName">
+                    Initial Velocity: X</div>
+                <input type="text" id="initialVelocityXOptionText" class="optionTextInput" /></div>
+            <div class="options">
+                <div class="optionName">
+                    Initial Velocity: Y</div>
+                <input type="text" id="initialVelocityYOptionText" class="optionTextInput" /></div>
+            <div class="options">
+                <input type="checkbox" id="RandomVelocityOptionCheckbox" />
+                Random Initial Velocity</div>
+            <div class="options">
+                <div class="optionName">
+                    Particle Size</div>
+                <input type="text" id="particleSizeOptionText" class="optionTextInput" /></div>
+            <div class="options">
+                <div class="optionName">
+                    Start Color</div>
+                <input type="text" id="startColorOptionText" class="optionTextInput" /></div>
+            <div class="options">
+                <div class="optionName">
+                    End Color</div>
+                <input type="text" id="endColorOptionText" class="optionTextInput" /></div>
+            <div class="options">
+                <input type="checkbox" id="randomColorOptionCheckbox" />
+                Random Particle Color</div>
+            <div class="options">
+                <div class="optionName">
+                    Decay %</div>
+                <input type="text" id="particleDecay" class="optionTextInput" /></div>
+        </div>
+        <div class="optionsSectionDiv">
+            <div class="optionsSectionTitle">
+                Obstacles</div>
+            <div class="options">
+                <div class="optionName">
+                    Obstacle Size</div>
+                <input type="text" id="obstacleSizeOptionText" class="optionTextInput" /></div>
+            <div class="options">
+                <div class="optionName">
+                    Obstacle Color</div>
+                <input type="text" id="obstacleColorOptionText" class="optionTextInput" /></div>
+            <div class="options">
+                <input type="checkbox" id="obstacleRandomColorOptionCheckbox" />
+                Random Obstacle Color</div>
+        </div>
+        <input id="applyOptions" type="submit" value="Apply Settings" onclick="applyOptions()" />
+    </div>
+</body>
+</html>
